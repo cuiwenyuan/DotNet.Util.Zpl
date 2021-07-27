@@ -2,7 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <Description>A .net library helping to generate and print ZPL string. Please visit https://github.com/cuiwenyuan/DotNet.Util.Zpl for more information</Description>
+	  <Company>cuiwenyuan.com</Company>
+	  <Version>1.0.0</Version>
+	  <Authors>Troy Cui</Authors>
+	  <PackageReleaseNotes></PackageReleaseNotes>
+	  <PackageTags>DotNet Zebra ZPL ZPL2 Printer</PackageTags>
+	  <PackageProjectUrl>https://github.com/cuiwenyuan/DotNet.Zpl</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/cuiwenyuan/DotNet.Zpl</RepositoryUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageId>DotNet.Util.Zpl</PackageId>
+	  <!--<PackageIcon>logo_128.png</PackageIcon>-->
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <AssemblyName>DotNet.Util.Zpl</AssemblyName>
+	  <RootNamespace>DotNet.Util</RootNamespace>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <ApplicationIcon>E:\Github\DotNet.Zpl\src\DotNet.Util.Zpl\App.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     <PackageReference Include="System.IO.Ports" Version="5.0.1" />
   </ItemGroup>

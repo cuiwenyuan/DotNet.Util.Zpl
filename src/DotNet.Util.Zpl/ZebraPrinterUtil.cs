@@ -12,7 +12,7 @@ using System.Text;
 namespace DotNet.Util
 {
     /// <summary>
-    /// 斑马打印助手，支持LPT/COM/USB/TCP四种模式，适用于标签、票据、条码打印。
+    /// 斑马打印机工具，支持LPT/COM/USB/TCP四种模式，适用于标签、票据、条码打印。
     /// </summary>
     public static class ZebraPrinterUtil
     {

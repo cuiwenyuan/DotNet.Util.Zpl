@@ -432,11 +432,15 @@ namespace DotNet.Util
         /// PrintWithTCP
         /// </summary>
         /// <param name="cmd"></param>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
         /// <param name="isWriteLog"></param>
         /// <returns></returns>
-        public static bool PrintWithTCP(string cmd, bool isWriteLog)
+        public static bool PrintWithTCP(string cmd, string ip, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.TCP;
+            TcpIpAddress = ip;
+            TcpPort = port;
             IsWriteLog = isWriteLog;
             return PrintCommand(cmd);
         }
@@ -444,11 +448,15 @@ namespace DotNet.Util
         /// PrintWithTCP
         /// </summary>
         /// <param name="bytes"></param>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
         /// <param name="isWriteLog"></param>
         /// <returns></returns>
-        public static bool PrintWithTCP(byte[] bytes, bool isWriteLog)
+        public static bool PrintWithTCP(byte[] bytes, string ip, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.TCP;
+            TcpIpAddress = ip;
+            TcpPort = port;
             IsWriteLog = isWriteLog;
             return PrintGraphics(bytes);
         }
@@ -488,7 +496,7 @@ namespace DotNet.Util
         /// </summary>
         /// <param name="cmd"></param>
         /// <returns></returns>
-        public static bool PrintCommand(string cmd)
+        internal static bool PrintCommand(string cmd)
         {
             lock (SyncRoot)
             {

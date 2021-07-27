@@ -16,7 +16,7 @@ namespace DotNet.Util
     /// </summary>
     public static class ZebraPrinterUtil
     {
-        #region 定义API方法
+        #region 定义本地打印API方法
 
         #region 写打印口(LPT)方法
         private const short FILE_ATTRIBUTE_NORMAL = 0x80;
@@ -133,7 +133,7 @@ namespace DotNet.Util
         /// <summary>
         /// 分数
         /// </summary>
-        public static int Copies { get; set; }
+        public static int Copies { get; set; } = 1;
         /// <summary>
         /// 端口号
         /// </summary>
@@ -149,11 +149,11 @@ namespace DotNet.Util
         /// <summary>
         /// 打印机类型
         /// </summary>
-        public static DeviceType PrinterType { get; set; }
+        public static DeviceType PrinterType { get; set; } = DeviceType.TCP;
         /// <summary>
         /// 打印机编程语言
         /// </summary>
-        public static ProgrammingLanguage PrinterProgrammingLanguage { get; set; }
+        public static ProgrammingLanguage PrinterProgrammingLanguage { get; set; } = ProgrammingLanguage.ZPL;
         /// <summary>  
         /// 日志保存目录，WEB应用注意不能放在BIN目录下。  
         /// </summary>  

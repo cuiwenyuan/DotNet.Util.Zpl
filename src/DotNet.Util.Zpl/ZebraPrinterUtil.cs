@@ -101,6 +101,7 @@ namespace DotNet.Util
         public static extern bool WritePrinter(IntPtr intptrPrinter, IntPtr intptrBytes, Int32 count, out Int32 written);
 
         #endregion
+
         #region 定义私有字段  
         /// <summary>  
         /// 线程锁，防止多线程调用。  
@@ -231,7 +232,12 @@ namespace DotNet.Util
             }
             return bSuccess;
         }
-
+        /// <summary>
+        /// SendFileToPrinter
+        /// </summary>
+        /// <param name="printerName">Printer Name</param>
+        /// <param name="fileName">File Name</param>
+        /// <returns></returns>
         public static bool SendFileToPrinter(string printerName, string fileName)
         {
             // Open the file.  
@@ -258,7 +264,12 @@ namespace DotNet.Util
             Marshal.FreeCoTaskMem(pUnmanagedBytes);
             return bSuccess;
         }
-
+        /// <summary>
+        /// SendBytesToPrinter
+        /// </summary>
+        /// <param name="printerName">Printer Name</param>
+        /// <param name="bytes">Bytes</param>
+        /// <returns></returns>
         public static bool SendBytesToPrinter(string printerName, byte[] bytes)
         {
             bool bSuccess = false;
@@ -274,7 +285,12 @@ namespace DotNet.Util
             Marshal.FreeCoTaskMem(pUnmanagedBytes);
             return bSuccess;
         }
-
+        /// <summary>
+        /// SendStringToPrinter
+        /// </summary>
+        /// <param name="printerName">Printer Name</param>
+        /// <param name="text">Text</param>
+        /// <returns></returns>
         public static bool SendStringToPrinter(string printerName, string text)
         {
             IntPtr pBytes;
@@ -356,6 +372,13 @@ namespace DotNet.Util
         #endregion
 
         #region 封装方法，方便调用。  
+        /// <summary>
+        /// PrintWithCOM
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="port"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithCOM(string cmd, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.COM;
@@ -363,7 +386,13 @@ namespace DotNet.Util
             IsWriteLog = isWriteLog;
             return PrintCommand(cmd);
         }
-
+        /// <summary>
+        /// PrintWithCOM
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="port"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithCOM(byte[] bytes, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.COM;
@@ -371,7 +400,13 @@ namespace DotNet.Util
             IsWriteLog = isWriteLog;
             return PrintGraphics(bytes);
         }
-
+        /// <summary>
+        /// PrintWithLPT
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="port"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithLPT(string cmd, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.LPT;
@@ -379,7 +414,13 @@ namespace DotNet.Util
             IsWriteLog = isWriteLog;
             return PrintCommand(cmd);
         }
-
+        /// <summary>
+        /// PrintWithLPT
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="port"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithLPT(byte[] bytes, int port, bool isWriteLog)
         {
             PrinterType = DeviceType.LPT;
@@ -387,21 +428,37 @@ namespace DotNet.Util
             IsWriteLog = isWriteLog;
             return PrintGraphics(bytes);
         }
-
+        /// <summary>
+        /// PrintWithTCP
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithTCP(string cmd, bool isWriteLog)
         {
             PrinterType = DeviceType.TCP;
             IsWriteLog = isWriteLog;
             return PrintCommand(cmd);
         }
-
+        /// <summary>
+        /// PrintWithTCP
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithTCP(byte[] bytes, bool isWriteLog)
         {
             PrinterType = DeviceType.TCP;
             IsWriteLog = isWriteLog;
             return PrintGraphics(bytes);
         }
-
+        /// <summary>
+        /// PrintWithDRV
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="printerName"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithDRV(string cmd, string printerName, bool isWriteLog)
         {
             PrinterType = DeviceType.DRV;
@@ -409,7 +466,13 @@ namespace DotNet.Util
             IsWriteLog = isWriteLog;
             return PrintCommand(cmd);
         }
-
+        /// <summary>
+        /// PrintWithDRV
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="printerName"></param>
+        /// <param name="isWriteLog"></param>
+        /// <returns></returns>
         public static bool PrintWithDRV(byte[] bytes, string printerName, bool isWriteLog)
         {
             PrinterType = DeviceType.DRV;
@@ -419,7 +482,12 @@ namespace DotNet.Util
         }
         #endregion
 
-        #region 打印ZPL、EPL、CPCL、TCP指令  
+        #region 打印ZPL、EPL、CPCL、TCP指令
+        /// <summary>
+        /// PrintCommand
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
         public static bool PrintCommand(string cmd)
         {
             lock (SyncRoot)
@@ -465,7 +533,12 @@ namespace DotNet.Util
         }
         #endregion
 
-        #region 打印图像  
+        #region 打印图像
+        /// <summary>
+        /// PrintGraphics
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <returns></returns>
         public static bool PrintGraphics(byte[] graph)
         {
             lock (SyncRoot)
@@ -692,7 +765,11 @@ namespace DotNet.Util
         }
         #endregion
 
-        #region 生成CPCL图像打印指令  
+        #region 生成CPCL图像打印指令
+        /// <summary>
+        /// getCPCLBytes
+        /// </summary>
+        /// <returns></returns>
         public static byte[] getCPCLBytes()
         {
             //GRAPHICS Commands  
@@ -1034,9 +1111,18 @@ namespace DotNet.Util
     /// </summary>
     public enum ProgrammingLanguage
     {
-        ZPL,
-        EPL,
-        CPCL
+        /// <summary>
+        /// ZPL
+        /// </summary>
+        ZPL = 0,
+        /// <summary>
+        /// EPL
+        /// </summary>
+        EPL = 1,
+        /// <summary>
+        /// CPCL
+        /// </summary>
+        CPCL = 2
     }
     #endregion
 
@@ -1046,9 +1132,21 @@ namespace DotNet.Util
     /// </summary>
     public enum DeviceType
     {
+        /// <summary>
+        /// COM
+        /// </summary>
         COM,
+        /// <summary>
+        /// LPT
+        /// </summary>
         LPT,
+        /// <summary>
+        /// TCP
+        /// </summary>
         TCP,
+        /// <summary>
+        /// DRV
+        /// </summary>
         DRV
     }
     #endregion
@@ -1059,19 +1157,37 @@ namespace DotNet.Util
     /// </summary>
     public enum LogType
     {
+        /// <summary>
+        /// Error
+        /// </summary>
         Error,
+        /// <summary>
+        /// Print
+        /// </summary>
         Print
     }
     #endregion
 
     #region 打印文档信息类
+    /// <summary>
+    /// DocInfo
+    /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
     public class DocInfo
     {
+        /// <summary>
+        /// DocName
+        /// </summary>
         [MarshalAs(UnmanagedType.LPStr)]
         public string DocName;
+        /// <summary>
+        /// OutputFile
+        /// </summary>
         [MarshalAs(UnmanagedType.LPStr)]
         public string OutputFile;
+        /// <summary>
+        /// DataType
+        /// </summary>
         [MarshalAs(UnmanagedType.LPStr)]
         public string DataType;
     }

@@ -54,6 +54,7 @@ Also, a Virutal Printer for Zebra is available as [Chrome Plugin](https://chrome
 ### Using statement
 
 ```cs
+using DotNet.Util.Zpl;
 using DotNet.Util.Zpl.Label;
 using DotNet.Util.Zpl.Label.Elements;
 ```

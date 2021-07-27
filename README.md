@@ -16,7 +16,7 @@ This library supports following connected printer:
 | TCP | Network printers/Shared Printers |
 
 ## BinaryKits.Zpl
-Generate ZPL label data is based on [BinaryKits.Zpl](https://github.com/BinaryKits/BinaryKits.Zpl), 
+Generate ZPL label data is based on [BinaryKits.Zpl](https://github.com/BinaryKits/BinaryKits.Zpl), thanks [BinaryKits.Zpl](https://github.com/BinaryKits/BinaryKits.Zpl).
 
 ## Supported Label Elements
 
@@ -54,8 +54,8 @@ Also, a Virutal Printer for Zebra is available as [Chrome Plugin](https://chrome
 ### Using statement
 
 ```cs
-using BinaryKits.Zpl.Label;
-using BinaryKits.Zpl.Label.Elements;
+using DotNet.Util.Zpl.Label;
+using DotNet.Util.Zpl.Label.Elements;
 ```
 
 ### Single element

@@ -45,7 +45,7 @@ namespace DotNet.Util
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "OpenPrinterA", SetLastError = true, CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
 
-        public static extern bool OpenPrinter([MarshalAs(UnmanagedType.LPStr)] string printerName, out IntPtr intptrPrinter, IntPtr intptrPrintDocument);
+        internal static extern bool OpenPrinter([MarshalAs(UnmanagedType.LPStr)] string printerName, out IntPtr intptrPrinter, IntPtr intptrPrintDocument);
 
         /// <summary>
         /// ClosePrinter
@@ -53,7 +53,7 @@ namespace DotNet.Util
         /// <param name="intptrPrinter"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "ClosePrinter", SetLastError = true, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool ClosePrinter(IntPtr intptrPrinter);
+        internal static extern bool ClosePrinter(IntPtr intptrPrinter);
 
         /// <summary>
         /// StartDocPrinter
@@ -63,7 +63,7 @@ namespace DotNet.Util
         /// <param name="docInfo"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "StartDocPrinterA", SetLastError = true, CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool StartDocPrinter(IntPtr intptrPrinter, Int32 level, [In, MarshalAs(UnmanagedType.LPStruct)] DocInfo docInfo);
+        internal static extern bool StartDocPrinter(IntPtr intptrPrinter, Int32 level, [In, MarshalAs(UnmanagedType.LPStruct)] DocInfo docInfo);
 
         /// <summary>
         /// EndDocPrinter
@@ -71,7 +71,7 @@ namespace DotNet.Util
         /// <param name="intptrPrinter"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "EndDocPrinter", SetLastError = true, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool EndDocPrinter(IntPtr intptrPrinter);
+        internal static extern bool EndDocPrinter(IntPtr intptrPrinter);
 
         /// <summary>
         /// StartPagePrinter
@@ -79,7 +79,7 @@ namespace DotNet.Util
         /// <param name="intptrPrinter"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "StartPagePrinter", SetLastError = true, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool StartPagePrinter(IntPtr intptrPrinter);
+        internal static extern bool StartPagePrinter(IntPtr intptrPrinter);
 
         /// <summary>
         /// EndPagePrinter
@@ -87,7 +87,7 @@ namespace DotNet.Util
         /// <param name="intptrPrinter"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "EndPagePrinter", SetLastError = true, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool EndPagePrinter(IntPtr intptrPrinter);
+        internal static extern bool EndPagePrinter(IntPtr intptrPrinter);
 
         /// <summary>
         /// WritePrinter
@@ -98,7 +98,7 @@ namespace DotNet.Util
         /// <param name="written"></param>
         /// <returns></returns>
         [DllImport("winspool.Drv", EntryPoint = "WritePrinter", SetLastError = true, ExactSpelling = true, CallingConvention = CallingConvention.StdCall)]
-        public static extern bool WritePrinter(IntPtr intptrPrinter, IntPtr intptrBytes, Int32 count, out Int32 written);
+        internal static extern bool WritePrinter(IntPtr intptrPrinter, IntPtr intptrBytes, Int32 count, out Int32 written);
 
         #endregion
 
@@ -197,7 +197,7 @@ namespace DotNet.Util
         #endregion
 
         #region 定义发送原始数据到打印机的方法
-        private static bool SendBytesToPrinter(string printerName, IntPtr intptrBytes, Int32 count)
+        internal static bool SendBytesToPrinter(string printerName, IntPtr intptrBytes, Int32 count)
         {
             Int32 error = 0, written = 0;
             IntPtr intptrPrinter = new IntPtr(0);
@@ -238,7 +238,7 @@ namespace DotNet.Util
         /// <param name="printerName">Printer Name</param>
         /// <param name="fileName">File Name</param>
         /// <returns></returns>
-        public static bool SendFileToPrinter(string printerName, string fileName)
+        internal static bool SendFileToPrinter(string printerName, string fileName)
         {
             // Open the file.  
             FileStream fs = new FileStream(fileName, FileMode.Open);
@@ -270,7 +270,7 @@ namespace DotNet.Util
         /// <param name="printerName">Printer Name</param>
         /// <param name="bytes">Bytes</param>
         /// <returns></returns>
-        public static bool SendBytesToPrinter(string printerName, byte[] bytes)
+        internal static bool SendBytesToPrinter(string printerName, byte[] bytes)
         {
             bool bSuccess = false;
             IntPtr pUnmanagedBytes = new IntPtr(0);
@@ -291,7 +291,7 @@ namespace DotNet.Util
         /// <param name="printerName">Printer Name</param>
         /// <param name="text">Text</param>
         /// <returns></returns>
-        public static bool SendStringToPrinter(string printerName, string text)
+        internal static bool SendStringToPrinter(string printerName, string text)
         {
             IntPtr pBytes;
             Int32 dwCount;
@@ -547,7 +547,7 @@ namespace DotNet.Util
         /// </summary>
         /// <param name="graph"></param>
         /// <returns></returns>
-        public static bool PrintGraphics(byte[] graph)
+        internal static bool PrintGraphics(byte[] graph)
         {
             lock (SyncRoot)
             {
@@ -778,7 +778,7 @@ namespace DotNet.Util
         /// getCPCLBytes
         /// </summary>
         /// <returns></returns>
-        public static byte[] getCPCLBytes()
+        internal static byte[] getCPCLBytes()
         {
             //GRAPHICS Commands  
             //Bit-mapped graphics can be printed by using graphics commands. ASCII hex (hexadecimal) is  
@@ -837,7 +837,7 @@ namespace DotNet.Util
         /// </summary>  
         /// <param name="pimage"></param>  
         /// <returns></returns>  
-        public static Bitmap ConvertToGrayscale(Bitmap pimage)
+        internal static Bitmap ConvertToGrayscale(Bitmap pimage)
         {
             Bitmap source = null;
 
@@ -1008,7 +1008,7 @@ namespace DotNet.Util
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public static string CompressLZ77(string text)
+        internal static string CompressLZ77(string text)
         {
             //将转成16进制的文本进行压缩  
             string result = string.Empty;
@@ -1037,7 +1037,7 @@ namespace DotNet.Util
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public static string DecompressLZ77(string text)
+        internal static string DecompressLZ77(string text)
         {
             string result = string.Empty;
             char[] arrChar = text.ToCharArray();

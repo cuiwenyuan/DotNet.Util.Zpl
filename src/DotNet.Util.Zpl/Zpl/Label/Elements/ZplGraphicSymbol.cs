@@ -2,12 +2,27 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplGraphicSymbol
+    /// </summary>
     public class ZplGraphicSymbol : ZplPositionedElementBase
     {
+        /// <summary>
+        /// FieldOrientation
+        /// </summary>
         public FieldOrientation FieldOrientation { get; private set; }
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width { get; private set; }
+        /// <summary>
+        /// Height
+        /// </summary>
         public int Height { get; private set; }
-
+        
+        /// <summary>
+        /// Character
+        /// </summary>
         public GraphicSymbolCharacter Character { get; private set; }
 
         string CharacterLetter
@@ -31,7 +46,15 @@ namespace DotNet.Util.Zpl.Label.Elements
                 }
             }
         }
-
+        /// <summary>
+        /// ZplGraphicSymbol
+        /// </summary>
+        /// <param name="character"></param>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="fieldOrientation"></param>
         public ZplGraphicSymbol(
             GraphicSymbolCharacter character,
             int positionX,

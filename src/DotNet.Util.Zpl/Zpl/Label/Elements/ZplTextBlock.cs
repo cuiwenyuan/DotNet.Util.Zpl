@@ -10,10 +10,25 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplTextBlock : ZplTextField
     {
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width { get; private set; }
-
+        /// <summary>
+        /// Height
+        /// </summary>
         public int Height { get; private set; }
-
+        /// <summary>
+        /// ZplTextBlock
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="font"></param>
+        /// <param name="newLineConversion"></param>
+        /// <param name="useHexadecimalIndicator"></param>
         public ZplTextBlock(
             string text,
             int positionX,

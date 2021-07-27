@@ -25,8 +25,14 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </remarks>
     public class ZplDownloadGraphics : ZplDownload
     {
+        /// <summary>
+        /// ImageName
+        /// </summary>
         public string ImageName { get; private set; }
         private string _extension { get; set; }
+        /// <summary>
+        /// ImageData
+        /// </summary>
         public byte[] ImageData { get; private set; }
 
         private bool _isCompressionActive;

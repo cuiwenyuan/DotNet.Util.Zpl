@@ -2,15 +2,30 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplQrCode
+    /// </summary>
     public class ZplQrCode : ZplPositionedElementBase
     {
+        /// <summary>
+        /// Content
+        /// </summary>
         public string Content { get; protected set; }
-
+        /// <summary>
+        /// Model
+        /// </summary>
         public int Model { get; private set; }
-
+        /// <summary>
+        /// MagnificationFactor
+        /// </summary>
         public int MagnificationFactor { get; private set; }
-
+        /// <summary>
+        /// ErrorCorrectionLevel
+        /// </summary>
         public ErrorCorrectionLevel ErrorCorrectionLevel { get; private set; }
+        /// <summary>
+        /// MaskValue
+        /// </summary>
         public int MaskValue { get; private set; }
 
         /// <summary>

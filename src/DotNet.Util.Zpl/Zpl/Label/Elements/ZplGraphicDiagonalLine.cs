@@ -2,10 +2,25 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplGraphicDiagonalLine
+    /// </summary>
     public class ZplGraphicDiagonalLine : ZplGraphicBox
     {
+        /// <summary>
+        /// RightLeaningDiagonal
+        /// </summary>
         public bool RightLeaningDiagonal { get; private set; }
-
+        /// <summary>
+        /// ZplGraphicDiagonalLine
+        /// </summary>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="rightLeaningDiagonal"></param>
+        /// <param name="lineColor"></param>
         public ZplGraphicDiagonalLine(
             int positionX,
             int positionY,

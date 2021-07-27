@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace DotNet.Util.Zpl.Label
 {
+    /// <summary>
+    /// ZplEngine
+    /// </summary>
     public class ZplEngine : List<ZplElementBase>
     {
         /// <summary>
@@ -75,7 +78,11 @@ namespace DotNet.Util.Zpl.Label
 
             return result;
         }
-
+        /// <summary>
+        /// ToZplString
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public string ToZplString(ZplRenderOptions context)
         {
             return string.Join("\n", Render(context));

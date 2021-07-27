@@ -40,26 +40,47 @@
         /// FieldOrientation
         /// </summary>
         public FieldOrientation FieldOrientation { get; protected set; }
-
+        /// <summary>
+        /// Content
+        /// </summary>
         public string Content { get; protected set; }
+        /// <summary>
+        /// Content
+        /// </summary>
         public bool PrintInterpretationLine { get; protected set; }
+        /// <summary>
+        /// Content
+        /// </summary>
         public bool PrintInterpretationLineAboveCode { get; protected set; }
-
+        /// <summary>
+        /// RenderPrintInterpretationLine
+        /// </summary>
+        /// <returns></returns>
         public string RenderPrintInterpretationLine()
         {
             return PrintInterpretationLine ? "Y" : "N";
         }
-
+        /// <summary>
+        /// RenderPrintInterpretationLineAboveCode
+        /// </summary>
+        /// <returns></returns>
         public string RenderPrintInterpretationLineAboveCode()
         {
             return PrintInterpretationLineAboveCode ? "Y" : "N";
         }
-
+        /// <summary>
+        /// RenderFieldOrientation
+        /// </summary>
+        /// <returns></returns>
         protected string RenderFieldOrientation()
         {
             return RenderFieldOrientation(FieldOrientation);
         }
-
+        /// <summary>
+        /// IsDigitsOnly
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         protected bool IsDigitsOnly(string text)
         {
             foreach (char c in text)

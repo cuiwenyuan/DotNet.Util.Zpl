@@ -16,8 +16,18 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </remarks>
     public class ZplGraphicCircle : ZplGraphicElement
     {
+        /// <summary>
+        /// Diameter
+        /// </summary>
         public int Diameter { get; private set; }
-
+        /// <summary>
+        /// ZplGraphicCircle
+        /// </summary>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="diameter"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="lineColor"></param>
         public ZplGraphicCircle(
             int positionX,
             int positionY,

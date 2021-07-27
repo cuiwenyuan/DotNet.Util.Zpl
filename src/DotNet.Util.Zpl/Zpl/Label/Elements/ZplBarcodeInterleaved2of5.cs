@@ -8,6 +8,9 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplBarcodeInterleaved2of5 : ZplBarcode
     {
+        /// <summary>
+        /// Mod10CheckDigit
+        /// </summary>
         public bool Mod10CheckDigit { get; private set; }
 
         /// <summary>

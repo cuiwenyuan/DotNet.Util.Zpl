@@ -8,6 +8,9 @@ using System.Text;
 
 namespace DotNet.Util.Zpl.Label.Helpers
 {
+    /// <summary>
+    /// CompressHelper
+    /// </summary>
     public static class CompressHelper
     {
         /// <summary>
@@ -21,7 +24,12 @@ namespace DotNet.Util.Zpl.Label.Helpers
             {20, "g"}, {40, "h"}, {60, "i"}, {80, "j" }, {100, "k"}, {120, "l"}, {140, "m"}, {160, "n"}, {180, "o"}, {200, "p"},
             {220, "q"}, {240, "r"}, {260, "s"}, {280, "t"}, {300, "u"}, {320, "v"}, {340, "w"}, {360, "x"}, {380, "y"}, {400, "z" }
         };
-
+        /// <summary>
+        /// CompressHex
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="widthBytes"></param>
+        /// <returns></returns>
         public static string CompressHex(string code, int widthBytes)
         {
             int maxlinea = widthBytes * 2;

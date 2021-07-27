@@ -4,8 +4,16 @@ using System.Text;
 
 namespace DotNet.Util.Zpl.Label.ImageConverters
 {
+    /// <summary>
+    /// ImageSharpImageConverter
+    /// </summary>
     public class ImageSharpImageConverter : IImageConverter
     {
+        /// <summary>
+        /// ConvertImage
+        /// </summary>
+        /// <param name="imageData"></param>
+        /// <returns></returns>
         public ImageResult ConvertImage(byte[] imageData)
         {
             var zplBuilder = new StringBuilder();

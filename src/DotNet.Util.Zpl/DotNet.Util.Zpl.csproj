@@ -8,8 +8,8 @@
 	  <Authors>Troy Cui</Authors>
 	  <PackageReleaseNotes></PackageReleaseNotes>
 	  <PackageTags>DotNet Zebra ZPL ZPL2 Printer COM LPT TCP USB</PackageTags>
-	  <PackageProjectUrl>https://github.com/cuiwenyuan/DotNet.Zpl</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/cuiwenyuan/DotNet.Zpl</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/cuiwenyuan/DotNet.Util.Zpl</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/cuiwenyuan/DotNet.Util.Zpl</RepositoryUrl>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageId>DotNet.Util.Zpl</PackageId>
 	  <!--<PackageIcon>logo_128.png</PackageIcon>-->
@@ -19,7 +19,8 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <IncludeSymbols>true</IncludeSymbols>
 	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	  <ApplicationIcon>E:\Github\DotNet.Zpl\src\DotNet.Util.Zpl\App.ico</ApplicationIcon>
+	  <ApplicationIcon>App.ico</ApplicationIcon>
+	  <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

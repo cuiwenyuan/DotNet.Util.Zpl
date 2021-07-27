@@ -9,8 +9,17 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplBarcodeAnsiCodabar : ZplBarcode
     {
+        /// <summary>
+        /// StopCharacter
+        /// </summary>
         public bool CheckDigit { get; private set; }
+        /// <summary>
+        /// StopCharacter
+        /// </summary>
         public char StartCharacter { get; private set; }
+        /// <summary>
+        /// StopCharacter
+        /// </summary>
         public char StopCharacter { get; private set; }
 
         /// <summary>

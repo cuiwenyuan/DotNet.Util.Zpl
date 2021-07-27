@@ -12,7 +12,13 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </remarks>
     public class ZplOrigin : ZplElementBase
     {
+        /// <summary>
+        /// PositionX
+        /// </summary>
         public int PositionX { get; protected set; }
+        /// <summary>
+        /// PositionY
+        /// </summary>
         public int PositionY { get; protected set; }
 
         /// <summary>

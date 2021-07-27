@@ -4,18 +4,30 @@ using System.Text;
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
-    //^FD – Field Data
+    /// <summary>
+    /// ZplTextField ^FD – Field Data
+    /// </summary>
     public class ZplTextField : ZplPositionedElementBase
     {
-        //^A
+        /// <summary>
+        /// Font ^A
+        /// </summary>
         public ZplFont Font { get; protected set; }
-        //^FH
+        /// <summary>
+        /// UseHexadecimalIndicator ^FH
+        /// </summary>
         public bool UseHexadecimalIndicator { get; protected set; }
-        //^FR
+        /// <summary>
+        /// ReversePrint ^FR
+        /// </summary>
         public bool ReversePrint { get; protected set; }
-
+        /// <summary>
+        /// NewLineConversion
+        /// </summary>
         public NewLineConversionMethod NewLineConversion { get; protected set; }
-        //^FD
+        /// <summary>
+        /// Text ^FD
+        /// </summary>
         public string Text { get; protected set; }
 
         /// <summary>
@@ -57,7 +69,10 @@ namespace DotNet.Util.Zpl.Label.Elements
 
             return result;
         }
-
+        /// <summary>
+        /// RenderFieldDataSection
+        /// </summary>
+        /// <returns></returns>
         protected string RenderFieldDataSection()
         {
             var sb = new StringBuilder();

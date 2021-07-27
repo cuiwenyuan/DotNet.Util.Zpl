@@ -2,8 +2,14 @@
 
 namespace DotNet.Util.Zpl.Label
 {
+    /// <summary>
+    /// ZplConstants
+    /// </summary>
     public static class ZplConstants
     {
+        /// <summary>
+        /// InternationalFontEncoding
+        /// </summary>
         public static class InternationalFontEncoding
         {
             /// <summary>
@@ -15,9 +21,14 @@ namespace DotNet.Util.Zpl.Label
             /// </summary>
             public static readonly string CI13 = "^CI13";
         }
-
+        /// <summary>
+        /// Font
+        /// </summary>
         public static class Font
         {
+            /// <summary>
+            /// Default ZplFont
+            /// </summary>
             public static readonly ZplFont Default = new ZplFont(30, 30, "0", FieldOrientation.Normal);
         }
     }

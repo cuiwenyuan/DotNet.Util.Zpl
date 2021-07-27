@@ -15,8 +15,17 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </remarks>
     public class ZplImageMove : ZplPositionedElementBase
     {
+        /// <summary>
+        /// StorageDevice
+        /// </summary>
         public char StorageDevice { get; private set; }
+        /// <summary>
+        /// ObjectName
+        /// </summary>
         public string ObjectName { get; private set; }
+        /// <summary>
+        /// Extension
+        /// </summary>
         public string Extension { get; private set; }
 
         /// <summary>

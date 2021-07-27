@@ -2,14 +2,34 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplGraphicBox
+    /// </summary>
     public class ZplGraphicBox : ZplGraphicElement
     {
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width { get; private set; }
+        /// <summary>
+        /// Height
+        /// </summary>
         public int Height { get; private set; }
 
-        //0~8
+        /// <summary>
+        /// CornerRounding 0~8
+        /// </summary>
         public int CornerRounding { get; private set; }
-
+        /// <summary>
+        /// ZplGraphicBox
+        /// </summary>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="lineColor"></param>
+        /// <param name="cornerRounding"></param>
         public ZplGraphicBox(
             int positionX,
             int positionY,

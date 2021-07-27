@@ -8,12 +8,32 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplRecallGraphic : ZplPositionedElementBase
     {
+        /// <summary>
+        /// StorageDevice
+        /// </summary>
         public char StorageDevice { get; private set; }
+        /// <summary>
+        /// ImageName
+        /// </summary>
         public string ImageName { get; private set; }
         private string _extension { get; set; }
+        /// <summary>
+        /// MagnificationFactorX
+        /// </summary>
         public int MagnificationFactorX { get; private set; }
+        /// <summary>
+        /// MagnificationFactorY
+        /// </summary>
         public int MagnificationFactorY { get; private set; }
-
+        /// <summary>
+        /// ZplRecallGraphic
+        /// </summary>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="storageDevice"></param>
+        /// <param name="imageName"></param>
+        /// <param name="magnificationFactorX"></param>
+        /// <param name="magnificationFactorY"></param>
         public ZplRecallGraphic(
             int positionX,
             int positionY,

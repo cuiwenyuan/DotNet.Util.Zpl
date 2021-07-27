@@ -7,6 +7,9 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplBarcode39 : ZplBarcode
     {
+        /// <summary>
+        /// Mod43CheckDigit
+        /// </summary>
         public bool Mod43CheckDigit { get; private set; }
 
         /// <summary>

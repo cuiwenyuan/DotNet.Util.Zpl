@@ -2,8 +2,20 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplGraphicEllipse
+    /// </summary>
     public class ZplGraphicEllipse : ZplGraphicBox
     {
+        /// <summary>
+        /// ZplGraphicEllipse
+        /// </summary>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="borderThickness"></param>
+        /// <param name="lineColor"></param>
         public ZplGraphicEllipse(
             int positionX,
             int positionY,

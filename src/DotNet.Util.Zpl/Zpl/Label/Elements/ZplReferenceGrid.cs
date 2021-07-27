@@ -2,6 +2,9 @@
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplReferenceGrid
+    /// </summary>
     public class ZplReferenceGrid : ZplElementBase
     {
         ///<inheritdoc/>

@@ -3,20 +3,48 @@ using System.Collections.Generic;
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
-    //^FB – Field Block
+    /// <summary>
+    /// ZplFieldBlock ^FB – Field Block
+    /// </summary>
     public class ZplFieldBlock : ZplTextField
     {
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width { get; private set; }
-
+        /// <summary>
+        /// MaxLineCount
+        /// </summary>
         public int MaxLineCount { get; private set; }
-
+        /// <summary>
+        /// LineSpace
+        /// </summary>
         public int LineSpace { get; private set; }
-
+        /// <summary>
+        /// TextJustification
+        /// </summary>
         public TextJustification TextJustification { get; private set; }
 
-        //hanging indent (in dots) of the second and remaining lines
+        /// <summary>
+        /// HangingIndent hanging indent (in dots) of the second and remaining lines
+        /// </summary>
         public int HangingIndent { get; private set; }
 
+        /// <summary>
+        /// ZplFieldBlock
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="width"></param>
+        /// <param name="font"></param>
+        /// <param name="maxLineCount"></param>
+        /// <param name="lineSpace"></param>
+        /// <param name="textJustification"></param>
+        /// <param name="hangingIndent"></param>
+        /// <param name="newLineConversion"></param>
+        /// <param name="useHexadecimalIndicator"></param>
+        /// <param name="reversePrint"></param>
         public ZplFieldBlock(
             string text,
             int positionX,

@@ -8,8 +8,17 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </summary>
     public class ZplFontIdentifier : ZplElementBase
     {
+        /// <summary>
+        /// FontReplaceLetter
+        /// </summary>
         public char FontReplaceLetter { get; private set; }
+        /// <summary>
+        /// Device
+        /// </summary>
         public string Device { get; private set; }
+        /// <summary>
+        /// FontFileName
+        /// </summary>
         public string FontFileName { get; private set; }
 
         /// <summary>

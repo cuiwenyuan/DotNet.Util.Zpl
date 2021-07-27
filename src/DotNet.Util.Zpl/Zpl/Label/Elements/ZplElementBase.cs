@@ -3,8 +3,14 @@ using System.Collections.Generic;
 
 namespace DotNet.Util.Zpl.Label.Elements
 {
+    /// <summary>
+    /// ZplElementBase
+    /// </summary>
     public abstract class ZplElementBase
     {
+        /// <summary>
+        /// Comments
+        /// </summary>
         public List<string> Comments { get; protected set; }
 
         /// <summary>
@@ -16,7 +22,9 @@ namespace DotNet.Util.Zpl.Label.Elements
         /// Optionally identify the element for future lookup/manipulation
         /// </summary>
         public string Id { get; set; }
-
+        /// <summary>
+        /// ZplElementBase
+        /// </summary>
         public ZplElementBase()
         {
             Comments = new List<string>();
@@ -31,7 +39,10 @@ namespace DotNet.Util.Zpl.Label.Elements
         {
             return Render(new ZplRenderOptions());
         }
-
+        /// <summary>
+        /// RenderToString
+        /// </summary>
+        /// <returns></returns>
         public string RenderToString()
         {
             return string.Join(" ", Render());
@@ -43,7 +54,11 @@ namespace DotNet.Util.Zpl.Label.Elements
         /// <param name="context"></param>
         /// <returns></returns>
         public abstract IEnumerable<string> Render(ZplRenderOptions context);
-
+        /// <summary>
+        /// RenderFieldOrientation
+        /// </summary>
+        /// <param name="fieldOrientation"></param>
+        /// <returns></returns>
         public string RenderFieldOrientation(FieldOrientation fieldOrientation)
         {
             switch (fieldOrientation)
@@ -60,7 +75,11 @@ namespace DotNet.Util.Zpl.Label.Elements
 
             throw new NotImplementedException("Unknown Field Orientation");
         }
-
+        /// <summary>
+        /// RenderLineColor
+        /// </summary>
+        /// <param name="lineColor"></param>
+        /// <returns></returns>
         public string RenderLineColor(LineColor lineColor)
         {
             switch (lineColor)
@@ -73,7 +92,11 @@ namespace DotNet.Util.Zpl.Label.Elements
 
             throw new NotImplementedException("Unknown Line Color");
         }
-
+        /// <summary>
+        /// RenderErrorCorrectionLevel
+        /// </summary>
+        /// <param name="errorCorrectionLevel"></param>
+        /// <returns></returns>
         public string RenderErrorCorrectionLevel(ErrorCorrectionLevel errorCorrectionLevel)
         {
             switch (errorCorrectionLevel)
@@ -90,12 +113,19 @@ namespace DotNet.Util.Zpl.Label.Elements
 
             throw new NotImplementedException("Unknown Error Correction Level");
         }
-
+        /// <summary>
+        /// ToZplString
+        /// </summary>
+        /// <returns></returns>
         public string ToZplString()
         {
             return ToZplString(new ZplRenderOptions());
         }
-
+        /// <summary>
+        /// ToZplString
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public string ToZplString(ZplRenderOptions context)
         {
             return string.Join("\n", Render(context));

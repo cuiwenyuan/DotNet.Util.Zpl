@@ -27,9 +27,20 @@ namespace DotNet.Util.Zpl.Label.Elements
     /// </remarks>
     public class ZplDownloadObjects : ZplDownload
     {
+        /// <summary>
+        /// ObjectName
+        /// </summary>
         public string ObjectName { get; private set; }
+        /// <summary>
+        /// ImageData
+        /// </summary>
         public byte[] ImageData { get; private set; }
-
+        /// <summary>
+        /// ZplDownloadObjects
+        /// </summary>
+        /// <param name="storageDevice"></param>
+        /// <param name="imageName"></param>
+        /// <param name="imageData"></param>
         public ZplDownloadObjects(char storageDevice, string imageName, byte[] imageData)
             : base(storageDevice)
         {

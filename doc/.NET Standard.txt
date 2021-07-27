@@ -1,0 +1,3 @@
+.NET Standard 是针对多个 .NET 实现推出的一套正式的 .NET API 规范。 推出 .NET Standard 的背后动机是要提高 .NET 生态系统中的一致性。 但是，.NET 5 采用不同的方法来建立一致性，这种新方法在很多情况下都不需要 .NET Standard。 有关详细信息，请参阅本文后续部分的 .NET 5 和 .NET Standard。
+
+more detail please read at https://docs.microsoft.com/zh-cn/dotnet/standard/net-standard

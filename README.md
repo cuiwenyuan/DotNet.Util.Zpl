@@ -40,18 +40,11 @@ For example, the data can be transmitted to the printer IpAddress on port 9100.
 
 ```cs
 var zplData = @"^XA^MMP^PW300^LS0^LT0^FT10,60^APN,30,30^FH\^FDSAMPLE TEXT^FS^XZ";
-// Open connection
-var tcpClient = new System.Net.Sockets.TcpClient();
-tcpClient.Connect("10.10.5.85", 9100);
-
-// Send Zpl data to printer
-var writer = new System.IO.StreamWriter(tcpClient.GetStream());
-writer.Write(zplData);
-writer.Flush();
-
-// Close Connection
-writer.Close();
-tcpClient.Close();
+ZebraPrinterUtil.PrinterProgrammingLanguage = ProgrammingLanguage.ZPL;
+ZebraPrinterUtil.PrinterType = DeviceType.TCP;
+ZebraPrinterUtil.TcpIpAddress = "10.10.5.85";
+ZebraPrinterUtil.TcpPort = 9100;
+ZebraPrinterUtil.PrintCommand(zplData);
 ```
 
 Also, a Virutal Printer for Zebra is available as [Chrome Plugin](https://chrome.google.com/webstore/detail/zpl-printer/phoidlklenidapnijkabnfdgmadlcmjo)

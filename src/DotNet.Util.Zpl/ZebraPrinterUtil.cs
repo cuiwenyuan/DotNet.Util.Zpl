@@ -1100,6 +1100,29 @@ namespace DotNet.Util
             return result;
         }
         #endregion
+
+        #region 获取可用的打印机列表
+
+        /// <summary>
+        /// 获取可用的打印机列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetAvailablePrinters()
+        {
+            var printers = new List<string>();
+
+            foreach (string printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            {
+                //printers.Add(printer);
+                //PrinterDetail pd = new PrinterDetail();
+                //pd.PrinterName = printer;
+                //printers.Add(pd);
+                printers.Add(printer);
+            }
+
+            return printers;
+        }
+        #endregion
     }
 
     #region 自定义数据类

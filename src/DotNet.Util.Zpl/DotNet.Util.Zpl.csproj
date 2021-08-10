@@ -4,7 +4,7 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Description>A .net standard library helping to generate and print ZPL string. Please visit https://github.com/cuiwenyuan/DotNet.Util.Zpl for more information</Description>
 		<Company>www.cuiwenyuan.com</Company>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>崔文远Troy Cui</Authors>
 		<PackageReleaseNotes>Please visit https://github.com/cuiwenyuan/DotNet.Util.Zpl for details</PackageReleaseNotes>
 		<PackageTags>DotNet Util Zebra ZPL ZPL2 Printer COM LPT TCP USB</PackageTags>
@@ -12,7 +12,7 @@
 		<RepositoryUrl>https://github.com/cuiwenyuan/DotNet.Util.Zpl</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageId>WangCaiSoft.DotNet.Util.Zpl</PackageId>
-		<!--<PackageIcon>logo_128.png</PackageIcon>-->
+		<PackageIcon>logo.128.png</PackageIcon>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<AssemblyName>DotNet.Util.Zpl</AssemblyName>
 		<RootNamespace>DotNet.Util</RootNamespace>
@@ -21,10 +21,15 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<ApplicationIcon>App.ico</ApplicationIcon>
 		<RepositoryType>git</RepositoryType>
+		<NeutralLanguage>zh</NeutralLanguage>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<Compile Remove="ZebraPrinterUtil - Copy.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="logo.128.png" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
 	<ItemGroup>
